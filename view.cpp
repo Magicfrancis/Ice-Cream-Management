@@ -253,7 +253,7 @@ The M.I.C.E is currently in development can now view cash register and managemen
 (1) Add Ice Cream Flavor - Allow manager to add flavor ice cream
 (2) Add Containers - Allow manager to add container along with how many scoop it can hold.
 (3) Add Toppings - Allow manager to add toppings.
-(4) List all Inventory - Allow manager to view the list of flavor,container, and toppings.
+(4) Inventory->List Inventory - Allow manager to view the list of flavor,container, and toppings.
 (5) Add Serving - Allow server or manager to create serving for the customer.
 (6) List all Serving - Allow manager or server to view the Servings.
 (7) Add Customer - Server create a customer.
@@ -262,6 +262,7 @@ The M.I.C.E is currently in development can now view cash register and managemen
 (10) File-> Save - Save data file.
 (11) File-> Load - load a previous data from file.
 (12) Management->Money Statistic - view the business of emporium.
+(13) People->Add Manager - can hire a manager now
 (0) File Quit - Terminate program and data will not save.
 Use the '99' command to pre-populate test data.
   )";
