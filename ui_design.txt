@@ -1,0 +1,10 @@
+Menu Bar: 
+Item in the menu bar: File, Item, Order, Management, Help
+File drop down: User(login as manager or server), Save&Quit(execute system and save data too)
+Item drop down: Add New Flavor, Add New Container, Add New Topping, List all Inventory
+Order drop down: Assemble(make the ice cream product to sell), Status(change status of order as filled or cancelled)
+Management drop down: Add Server, Remove Server, Edit Item
+Help drop down: Easter(Preload testing data), Info(Display interface instruction)
+
+Tool Bar:
+Item in the tool bar: User, Item, Order, Help, Save&Quit
