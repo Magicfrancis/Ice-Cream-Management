@@ -9,6 +9,7 @@
 #include "person.h"
 #include "customer.h"
 #include "server.h"
+#include "manager.h" 
 #include <iostream>
 #include <string>
 
@@ -447,6 +448,76 @@ switch(cmd) {
     id = e_id.get_text();
     salary = e_salary.get_text();
    if (result == 1) {   emp.add_server(Mice::Server(name,stoi(id),phone, stod(salary))); }
+   
+   }
+   break;
+
+   case(18) : {
+   string name, phone, id, salary;
+
+   bool cancel = false;
+
+   Gtk::Dialog *dialog = new Gtk::Dialog();
+   dialog->set_title("Create Manager!");
+
+    Gtk::HBox b_name;
+    
+    Gtk::Label l_name{"Name:"};
+    l_name.set_width_chars(15);
+    b_name.pack_start(l_name, Gtk::PACK_SHRINK);
+
+    Gtk::Entry e_name;
+    e_name.set_max_length(50);
+    b_name.pack_start(e_name, Gtk::PACK_SHRINK);
+    dialog->get_vbox()->pack_start(b_name, Gtk::PACK_SHRINK);
+
+    Gtk::HBox b_id;
+    
+    Gtk::Label l_id{"ID#:"};
+    l_id.set_width_chars(15);
+    b_id.pack_start(l_id, Gtk::PACK_SHRINK);
+
+    Gtk::Entry e_id;
+    e_id.set_max_length(50);
+    b_id.pack_start(e_id, Gtk::PACK_SHRINK);
+    dialog->get_vbox()->pack_start(b_id, Gtk::PACK_SHRINK);
+
+    Gtk::HBox b_phone;
+    
+    Gtk::Label l_phone{"Phone Number:"};
+    l_phone.set_width_chars(15);
+    b_phone.pack_start(l_phone, Gtk::PACK_SHRINK);
+
+    Gtk::Entry e_phone;
+    e_phone.set_max_length(50);
+    b_phone.pack_start(e_phone, Gtk::PACK_SHRINK);
+    dialog->get_vbox()->pack_start(b_phone, Gtk::PACK_SHRINK);
+
+    Gtk::HBox b_salary;
+    
+    Gtk::Label l_salary{"Salary:"};
+    l_salary.set_width_chars(15);
+    b_salary.pack_start(l_salary, Gtk::PACK_SHRINK);
+
+    Gtk::Entry e_salary;
+    e_salary.set_max_length(50);
+    b_salary.pack_start(e_salary, Gtk::PACK_SHRINK);
+    dialog->get_vbox()->pack_start(b_salary, Gtk::PACK_SHRINK);
+
+    // Show dialog
+    dialog->add_button("Cancel", 0);
+    dialog->add_button("OK", 1);
+    dialog->show_all();
+    int result = dialog->run();
+
+    dialog->close();
+    while (Gtk::Main::events_pending())  Gtk::Main::iteration();
+
+    name = e_name.get_text();
+    phone = e_phone.get_text();
+    id = e_id.get_text();
+    salary = e_salary.get_text();
+   if (result == 1) {   emp.add_manager(Mice::Manager(name,stoi(id),phone, stod(salary))); }
    
    }
    break;

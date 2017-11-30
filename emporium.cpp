@@ -36,7 +36,12 @@ void Emporium::add_server(Mice::Server var) {
   output += "Server: " + var.name() + "(" + var.phone() + ")";
   people.push_back(output);
 }
-
+void Emporium::add_manager(Mice::Manager var) {
+  manager.push_back(var);
+  string output;
+  output += "Manager: " + var.name() + "(" + var.phone() + ")";
+  people.push_back(output);
+}
 string Emporium::add_order(int person, int amount, int serving) {
   string output;
   output += "\nOrder created by " + people[person] + "\nAmount: " + std::to_string(amount) + "\n" + servings[serving].print_serving() + "\nTotal Cost: $" + std::to_string(servings[serving].price() * amount);
@@ -79,6 +84,10 @@ int Emporium::number_of_serving() {
 
 int Emporium::number_of_server() {
   return server.size();
+}
+
+int Emporium::number_of_manager() {
+  return manager.size();
 }
 
 int Emporium::number_of_customer() {
@@ -132,6 +141,7 @@ void Emporium::easter() {
   add_serving(1,1,1,1);
   add_serving(0,0,0,0);
   add_customer(Mice::Customer("Francis Le", 0 , "123-234-2342"));
+  add_manager(Mice::Manager("Manly Man", 0 , "123-333-0000",1000));
   add_server(Mice::Server("Bob Dude", 0 , "234-234-2345", 100));
 }
 

@@ -103,6 +103,12 @@ Main_window::Main_window() {
     menuitem_addserver->signal_activate().connect(sigc::mem_fun(*this, &Main_window::on_addserver_click));
     pepemenu->append(*menuitem_addserver);
 
+   //        People ADD MANAGER
+    // Append Add MANAGER to the PEOPLE menu
+    menuitem_addmanager = Gtk::manage(new Gtk::MenuItem("_Add Manager", true));
+    menuitem_addmanager->signal_activate().connect(sigc::mem_fun(*this, &Main_window::on_addmanager_click));
+    pepemenu->append(*menuitem_addmanager);
+
     //     Inventory
     // Create a Inventory menu and add to the menu bar
     Gtk::MenuItem *menuitem_invent = Gtk::manage(new Gtk::MenuItem("_Management", true));
@@ -295,6 +301,9 @@ void Main_window::on_addcustomer_click() {
 }
 void Main_window::on_addserver_click() {
   controller.execute_cmd(12);    
+}
+void Main_window::on_addmanager_click() {
+  controller.execute_cmd(18);    
 }
 void Main_window::on_addorder_click() {
   controller.execute_cmd(13);  

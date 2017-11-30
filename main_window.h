@@ -16,6 +16,7 @@ class Main_window : public Gtk::Window
         void on_addserving_click();
         void on_addcustomer_click();
         void on_addserver_click();
+        void on_addmanager_click();
         void on_addorder_click();
         void on_quit_click();
         void on_listmoney_click();
@@ -36,6 +37,7 @@ class Main_window : public Gtk::Window
         Gtk::MenuItem *menuitem_loadfile;
         Gtk::MenuItem *menuitem_money;
         Gtk::MenuItem *menuitem_addserver;
+        Gtk::MenuItem *menuitem_addmanager;
         Gtk::MenuItem *menuitem_invlist;
         Gtk::MenuItem *menuitem_addflavor;
         Gtk::MenuItem *menuitem_addcontainer;
