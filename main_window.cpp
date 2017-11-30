@@ -30,19 +30,19 @@ Main_window::Main_window() {
 
     //         Save File
     // Append Save to the File menu
-    Gtk::MenuItem *menuitem_savefile = Gtk::manage(new Gtk::MenuItem("_Save File", true));
+    menuitem_savefile = Gtk::manage(new Gtk::MenuItem("_Save File", true));
     menuitem_savefile->signal_activate().connect(sigc::mem_fun(*this, &Main_window::on_savefile_click));
     filemenu->append(*menuitem_savefile);
 
     //         Load File
     // Append Load to the File menu
-    Gtk::MenuItem *menuitem_loadfile = Gtk::manage(new Gtk::MenuItem("_Load File", true));
+    menuitem_loadfile = Gtk::manage(new Gtk::MenuItem("_Load File", true));
     menuitem_loadfile->signal_activate().connect(sigc::mem_fun(*this, &Main_window::on_loadfile_click));
     filemenu->append(*menuitem_loadfile);
 
     //         Q U I T
     // Append Quit to the File menu
-    Gtk::MenuItem *menuitem_quit = Gtk::manage(new Gtk::MenuItem("_Quit", true));
+    menuitem_quit = Gtk::manage(new Gtk::MenuItem("_Quit", true));
     menuitem_quit->signal_activate().connect(sigc::mem_fun(*this, &Main_window::on_quit_click));
     filemenu->append(*menuitem_quit);
 
@@ -99,7 +99,7 @@ Main_window::Main_window() {
 
     //        People ADD SERVER
     // Append Add SERVER to the PEOPLE menu
-    Gtk::MenuItem *menuitem_addserver = Gtk::manage(new Gtk::MenuItem("_Add Server", true));
+    menuitem_addserver = Gtk::manage(new Gtk::MenuItem("_Add Server", true));
     menuitem_addserver->signal_activate().connect(sigc::mem_fun(*this, &Main_window::on_addserver_click));
     pepemenu->append(*menuitem_addserver);
 
@@ -112,31 +112,31 @@ Main_window::Main_window() {
 
     //        Inventory MONEY
     // Append List to the Inventory menu
-    Gtk::MenuItem *menuitem_money = Gtk::manage(new Gtk::MenuItem("_Money Statistic", true));
+    menuitem_money = Gtk::manage(new Gtk::MenuItem("_Money Statistic", true));
     menuitem_money->signal_activate().connect(sigc::mem_fun(*this, &Main_window::on_listmoney_click));
     inventmenu->append(*menuitem_money);
 
     //        Inventory LIST
-    // Append List to the Inventory menu
-    Gtk::MenuItem *menuitem_invlist = Gtk::manage(new Gtk::MenuItem("_List Inventory", true));
+    // Append List to the Inventory m
+    menuitem_invlist = Gtk::manage(new Gtk::MenuItem("_List Inventory", true));
     menuitem_invlist->signal_activate().connect(sigc::mem_fun(*this, &Main_window::on_listinventory_click));
     inventmenu->append(*menuitem_invlist);
 
     //        Inventory ADD FLAVOR
     // Append Add FLAVOR to the INVENTORY menu
-    Gtk::MenuItem *menuitem_addflavor = Gtk::manage(new Gtk::MenuItem("_Add Flavor", true));
+    menuitem_addflavor = Gtk::manage(new Gtk::MenuItem("_Add Flavor", true));
     menuitem_addflavor->signal_activate().connect(sigc::mem_fun(*this, &Main_window::on_addflavor_click));
     inventmenu->append(*menuitem_addflavor);
 
     //        Inventory ADD CONTAINER
     // Append Add CONTAINER to the INVENTORY menu
-    Gtk::MenuItem *menuitem_addcontainer = Gtk::manage(new Gtk::MenuItem("_Add Container", true));
+    menuitem_addcontainer = Gtk::manage(new Gtk::MenuItem("_Add Container", true));
     menuitem_addcontainer->signal_activate().connect(sigc::mem_fun(*this, &Main_window::on_addcontainer_click));
     inventmenu->append(*menuitem_addcontainer);
 
     //        Inventory ADD TOPPING
     // Append Add TOPPING to the INVENTORY menu
-    Gtk::MenuItem *menuitem_addtopping = Gtk::manage(new Gtk::MenuItem("_Add Topping", true));
+    menuitem_addtopping = Gtk::manage(new Gtk::MenuItem("_Add Topping", true));
     menuitem_addtopping->signal_activate().connect(sigc::mem_fun(*this, &Main_window::on_addtopping_click));
     inventmenu->append(*menuitem_addtopping);
 
@@ -187,7 +187,7 @@ Main_window::Main_window() {
 
     //           EASTER
     // Append easter to the Help menu
-    Gtk::MenuItem *menuitem_easter = Gtk::manage(new Gtk::MenuItem("Easter", true));
+    menuitem_easter = Gtk::manage(new Gtk::MenuItem("Easter", true));
     menuitem_easter->signal_activate().connect(sigc::mem_fun(*this, &Main_window::on_easter_click));
     helpmenu->append(*menuitem_easter);
 
@@ -330,17 +330,91 @@ void Main_window::on_easter_click() {
     controller.execute_cmd(99);
 }
 void Main_window::on_all_click() {
-    //menuitem_money->set_sensitive(false);
+    menuitem_savefile->set_sensitive(true);
+    menuitem_loadfile->set_sensitive(true);
+    menuitem_money->set_sensitive(true);
+    menuitem_addserver->set_sensitive(true);
+    menuitem_invlist->set_sensitive(true);
+    menuitem_addflavor->set_sensitive(true);
+    menuitem_addcontainer->set_sensitive(true);
+    menuitem_addtopping->set_sensitive(true);
+    menuitem_easter->set_sensitive(true);
+    menuitem_quit->set_sensitive(true);
 
+    addflavor->set_sensitive(menuitem_addflavor->get_sensitive());
+    addcontainer->set_sensitive(menuitem_addcontainer->get_sensitive());
+    addtopping->set_sensitive(menuitem_addtopping->get_sensitive());
+    quit->set_sensitive(menuitem_quit->get_sensitive());
 
 }
 void Main_window::on_owner_click() {
+    menuitem_savefile->set_sensitive(true);
+    menuitem_loadfile->set_sensitive(true);
+    menuitem_money->set_sensitive(true);
+    menuitem_addserver->set_sensitive(true);
+    menuitem_invlist->set_sensitive(true);
+    menuitem_addflavor->set_sensitive(true);
+    menuitem_addcontainer->set_sensitive(true);
+    menuitem_addtopping->set_sensitive(true);
+    menuitem_easter->set_sensitive(true);
+    menuitem_quit->set_sensitive(true);
+
+    addflavor->set_sensitive(menuitem_addflavor->get_sensitive());
+    addcontainer->set_sensitive(menuitem_addcontainer->get_sensitive());
+    addtopping->set_sensitive(menuitem_addtopping->get_sensitive());
+    quit->set_sensitive(menuitem_quit->get_sensitive());
 }
 void Main_window::on_manager_click() {
+    menuitem_savefile->set_sensitive(true);
+    menuitem_loadfile->set_sensitive(true);
+    menuitem_money->set_sensitive(true);
+    menuitem_addserver->set_sensitive(true);
+    menuitem_invlist->set_sensitive(true);
+    menuitem_addflavor->set_sensitive(true);
+    menuitem_addcontainer->set_sensitive(true);
+    menuitem_addtopping->set_sensitive(true);
+    menuitem_easter->set_sensitive(true);
+    menuitem_quit->set_sensitive(true);
+
+    addflavor->set_sensitive(menuitem_addflavor->get_sensitive());
+    addcontainer->set_sensitive(menuitem_addcontainer->get_sensitive());
+    addtopping->set_sensitive(menuitem_addtopping->get_sensitive());
+    quit->set_sensitive(menuitem_quit->get_sensitive());
 }
 void Main_window::on_server_click() {
+    menuitem_savefile->set_sensitive(false);
+    menuitem_loadfile->set_sensitive(false);
+    menuitem_money->set_sensitive(false);
+    menuitem_addserver->set_sensitive(false);
+    menuitem_invlist->set_sensitive(true);
+    menuitem_addflavor->set_sensitive(false);
+    menuitem_addcontainer->set_sensitive(false);
+    menuitem_addtopping->set_sensitive(false);
+    menuitem_easter->set_sensitive(false);
+    menuitem_quit->set_sensitive(false);
+
+    addflavor->set_sensitive(menuitem_addflavor->get_sensitive());
+    addcontainer->set_sensitive(menuitem_addcontainer->get_sensitive());
+    addtopping->set_sensitive(menuitem_addtopping->get_sensitive());
+    quit->set_sensitive(menuitem_quit->get_sensitive());
 }
 void Main_window::on_customer_click() {
+    menuitem_savefile->set_sensitive(false);
+    menuitem_loadfile->set_sensitive(false);
+    menuitem_money->set_sensitive(false);
+    menuitem_addserver->set_sensitive(false);
+    menuitem_invlist->set_sensitive(false);
+    menuitem_addflavor->set_sensitive(false);
+    menuitem_addcontainer->set_sensitive(false);
+    menuitem_addtopping->set_sensitive(false);
+    menuitem_easter->set_sensitive(false);
+    menuitem_quit->set_sensitive(false);
+
+    listinventory->set_sensitive(menuitem_invlist->get_sensitive());
+    addflavor->set_sensitive(menuitem_addflavor->get_sensitive());
+    addcontainer->set_sensitive(menuitem_addcontainer->get_sensitive());
+    addtopping->set_sensitive(menuitem_addtopping->get_sensitive());
+    quit->set_sensitive(menuitem_quit->get_sensitive());
 }
 
 

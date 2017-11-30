@@ -32,6 +32,17 @@ class Main_window : public Gtk::Window
         void on_server_click();                        // Select server role
         void on_customer_click();                      // Select customer role
     private:
+        Gtk::MenuItem *menuitem_savefile;
+        Gtk::MenuItem *menuitem_loadfile;
+        Gtk::MenuItem *menuitem_money;
+        Gtk::MenuItem *menuitem_addserver;
+        Gtk::MenuItem *menuitem_invlist;
+        Gtk::MenuItem *menuitem_addflavor;
+        Gtk::MenuItem *menuitem_addcontainer;
+        Gtk::MenuItem *menuitem_addtopping;
+        Gtk::MenuItem *menuitem_easter;  
+        Gtk::MenuItem *menuitem_quit;
+
 	Gtk::Image *addflavor_image;
 	Gtk::ToolButton *addflavor;
 	Gtk::Image *addcontainer_image;
